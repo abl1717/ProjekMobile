@@ -34,12 +34,7 @@ class MainActivity : AppCompatActivity() {
         }
         val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
 
-        setSupportActionBar(binding.toolbar)
-        supportActionBar?.apply {
-            title = "Halaman Beranda"
-            setDisplayHomeAsUpEnabled(true)
-            setDisplayShowHomeEnabled(true)
-        }
+
         binding.btnLogout.setOnClickListener {
             AlertDialog.Builder(this)
                 .setTitle("Logout")
@@ -54,6 +49,14 @@ class MainActivity : AppCompatActivity() {
                 }
                 .setNegativeButton("Batal") { dialog, _ -> dialog.dismiss() }
                 .show()
+        }
+
+        binding.btnLaporRound.setOnClickListener {
+            startActivity(Intent(this, DetailActivity::class.java))
+        }
+
+        binding.btnLaporFrag.setOnClickListener {
+            startActivity(Intent(this, DetailActivity::class.java))
         }
     }
 
