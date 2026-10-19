@@ -17,6 +17,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
+import com.example.abil.Laporan.LaporanFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -52,11 +53,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnLaporRound.setOnClickListener {
-            startActivity(Intent(this, DetailActivity::class.java))
-        }
-
-        binding.btnLaporFrag.setOnClickListener {
-            startActivity(Intent(this, DetailActivity::class.java))
+            startActivity(Intent(this, LaporanFragment::class.java))
         }
     }
 
