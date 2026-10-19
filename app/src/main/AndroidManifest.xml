@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Abil">
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".BaseActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
@@ -34,7 +34,7 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".BaseActivity"
+            android:name=".SplashScreenActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>

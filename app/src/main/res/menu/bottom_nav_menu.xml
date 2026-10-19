@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/home"
-        android:icon="@mipmap/ic_home_round"
+        android:icon="@drawable/ic_home"
         android:title="Home" />
     <item
         android:id="@+id/lapor"
-        android:icon="@mipmap/ic_lapor_round"
-        android:title="Message" />
+        android:icon="@drawable/ic_laporan"
+        android:title="Laporan" />
     <item
         android:id="@+id/info"
-        android:icon="@mipmap/ic_bell_round"
-        android:title="More" />
+        android:icon="@drawable/ic_megaphone"
+        android:title="Informasi" />
     <item
         android:id="@+id/profil"
-        android:icon="@mipmap/ic_bell_round"
-        android:title="More" />
+        android:icon="@drawable/ic_profile"
+        android:title="Profil" />
 </menu>
