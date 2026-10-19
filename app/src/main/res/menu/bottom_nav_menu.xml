@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <item
+        android:id="@+id/home"
+        android:icon="@mipmap/ic_home_round"
+        android:title="Home" />
+    <item
+        android:id="@+id/lapor"
+        android:icon="@mipmap/ic_lapor_round"
+        android:title="Message" />
+    <item
+        android:id="@+id/info"
+        android:icon="@mipmap/ic_bell_round"
+        android:title="More" />
+    <item
+        android:id="@+id/profil"
+        android:icon="@mipmap/ic_bell_round"
+        android:title="More" />
 </menu>
