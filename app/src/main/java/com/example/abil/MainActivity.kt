@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
 
 
+
         binding.btnLogout.setOnClickListener {
             AlertDialog.Builder(this)
                 .setTitle("Logout")
