@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -11,9 +11,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -28,4 +26,52 @@
             app:titleTextColor="@android:color/white" />
     </com.google.android.material.appbar.AppBarLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:padding="24dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plusjakartasans_regular"
+                android:justificationMode="inter_word"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean libero nibh, rhoncus ut lobortis eget, dictum quis libero. Suspendisse potenti. Pellentesque posuere quam at venenatis consequat. Sed nec felis eget libero pretium faucibus. Nunc consequat quis ex a tincidunt. Morbi eu mauris vitae augue elementum lobortis sit amet vitae tortor. Maecenas eu ornare dui, in congue sapien. Vestibulum auctor lectus odio, ac fringilla enim ornare vel. Curabitur cursus dui sed erat rhoncus tristique. Aenean cursus semper odio, condimentum ornare sem congue quis. Mauris ut consectetur eros, non bibendum nisl. Fusce justo ex, sollicitudin quis ex sit amet, cursus molestie mi.
+
+Aenean et metus dolor. Nam pretium turpis in blandit fringilla. Aliquam eu tortor orci. Morbi euismod porta nisl ac consequat. Quisque congue nisl quam, sed gravida nulla egestas vitae. Nulla at condimentum sem, nec interdum leo. Sed rhoncus rutrum finibus. Phasellus sit amet lacus pulvinar, malesuada massa venenatis, mattis libero.
+
+Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce imperdiet sed lectus eget imperdiet. Nam pretium libero vel quam rhoncus, ut commodo magna congue. Phasellus dictum fermentum enim id tempus. Pellentesque placerat, tortor eget eleifend placerat, felis arcu sodales nisi, in finibus justo ipsum in neque. Nam vel turpis maximus, accumsan nibh ut, gravida turpis. Aenean tincidunt, mi quis mattis pulvinar, nisi sem varius justo, eu fringilla libero arcu eget dolor. Integer hendrerit gravida leo cursus volutpat. Aenean eget ex orci. Duis iaculis odio eros, eu consequat ante accumsan a. Nunc vel ultricies quam. Donec scelerisque erat ac eros pulvinar iaculis. Ut fringilla libero et dui lacinia, at eleifend nulla tempus.
+
+Mauris elit orci, bibendum at finibus eget, cursus vel nulla. Nunc nec nunc finibus, aliquam velit sagittis, sollicitudin est. Curabitur tincidunt elementum facilisis. Phasellus pharetra in magna vel fermentum. Donec mauris enim, semper eu urna sed, laoreet scelerisque eros. Donec sollicitudin libero vel sapien porta dignissim. Nam a nisi id risus hendrerit lacinia a ac leo. Curabitur vulputate auctor risus, at malesuada eros hendrerit ac.
+
+Donec in augue nisi. Duis tempor tortor eu vehicula commodo. Cras accumsan, risus ut tempor ultricies, urna arcu sollicitudin purus, quis semper dui metus in erat. Praesent a justo eu lacus eleifend venenatis. Proin consequat elit lorem, vitae cursus eros tincidunt nec. Aenean justo nisl, convallis non euismod ac, tristique a dui. Integer vel suscipit nibh. Fusce at diam ipsum. Etiam non mi ut mi vulputate interdum." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plusjakartasans_regular"
+                android:justificationMode="inter_word"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean libero nibh, rhoncus ut lobortis eget, dictum quis libero. Suspendisse potenti. Pellentesque posuere quam at venenatis consequat. Sed nec felis eget libero pretium faucibus. Nunc consequat quis ex a tincidunt. Morbi eu mauris vitae augue elementum lobortis sit amet vitae tortor. Maecenas eu ornare dui, in congue sapien. Vestibulum auctor lectus odio, ac fringilla enim ornare vel. Curabitur cursus dui sed erat rhoncus tristique. Aenean cursus semper odio, condimentum ornare sem congue quis. Mauris ut consectetur eros, non bibendum nisl. Fusce justo ex, sollicitudin quis ex sit amet, cursus molestie mi.
+
+Aenean et metus dolor. Nam pretium turpis in blandit fringilla. Aliquam eu tortor orci. Morbi euismod porta nisl ac consequat. Quisque congue nisl quam, sed gravida nulla egestas vitae. Nulla at condimentum sem, nec interdum leo. Sed rhoncus rutrum finibus. Phasellus sit amet lacus pulvinar, malesuada massa venenatis, mattis libero.
+
+Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce imperdiet sed lectus eget imperdiet. Nam pretium libero vel quam rhoncus, ut commodo magna congue. Phasellus dictum fermentum enim id tempus. Pellentesque placerat, tortor eget eleifend placerat, felis arcu sodales nisi, in finibus justo ipsum in neque. Nam vel turpis maximus, accumsan nibh ut, gravida turpis. Aenean tincidunt, mi quis mattis pulvinar, nisi sem varius justo, eu fringilla libero arcu eget dolor. Integer hendrerit gravida leo cursus volutpat. Aenean eget ex orci. Duis iaculis odio eros, eu consequat ante accumsan a. Nunc vel ultricies quam. Donec scelerisque erat ac eros pulvinar iaculis. Ut fringilla libero et dui lacinia, at eleifend nulla tempus.
+
+Mauris elit orci, bibendum at finibus eget, cursus vel nulla. Nunc nec nunc finibus, aliquam velit sagittis, sollicitudin est. Curabitur tincidunt elementum facilisis. Phasellus pharetra in magna vel fermentum. Donec mauris enim, semper eu urna sed, laoreet scelerisque eros. Donec sollicitudin libero vel sapien porta dignissim. Nam a nisi id risus hendrerit lacinia a ac leo. Curabitur vulputate auctor risus, at malesuada eros hendrerit ac.
+
+Donec in augue nisi. Duis tempor tortor eu vehicula commodo. Cras accumsan, risus ut tempor ultricies, urna arcu sollicitudin purus, quis semper dui metus in erat. Praesent a justo eu lacus eleifend venenatis. Proin consequat elit lorem, vitae cursus eros tincidunt nec. Aenean justo nisl, convallis non euismod ac, tristique a dui. Integer vel suscipit nibh. Fusce at diam ipsum. Etiam non mi ut mi vulputate interdum." />
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -12,6 +12,7 @@ import com.example.abil.DetailActivity
 import com.example.abil.Laporan.LaporanFragment
 import com.example.abil.LoginActivity
 import com.example.abil.R
+import com.example.abil.WebViewActivity
 import com.example.abil.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -47,6 +48,10 @@ class HomeFragment : Fragment() {
                 }
                 .setNegativeButton("Batal") { dialog, _ -> dialog.dismiss() }
                 .show()
+        }
+
+        binding.btnWebView.setOnClickListener {
+            startActivity(Intent(requireContext(), WebViewActivity::class.java))
         }
 
         binding.btnLaporRound.setOnClickListener {
