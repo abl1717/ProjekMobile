@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.abil.R
 import com.example.abil.databinding.FragmentInformasiBinding
+import com.google.android.material.chip.Chip
 
 class InformasiFragment : Fragment() {
     private var _binding: FragmentInformasiBinding? = null
@@ -74,6 +75,15 @@ class InformasiFragment : Fragment() {
                 requireContext(), "Kamu memilih: $title ($desc)",
                 Toast.LENGTH_SHORT
             ).show()
+        }
+
+        binding.chipGroupFilter.setOnCheckedStateChangeListener { group, checkedIds ->
+            val selectedChipId = checkedIds.firstOrNull() // ambil id chip yang dipilih
+            if (selectedChipId != null) {
+                val chip = group.findViewById<Chip>(selectedChipId)
+                Toast.makeText(requireContext(), "Filter: ${chip.text}", Toast.LENGTH_SHORT).show()
+// Lakukan logika filter di sini
+            }
         }
     }
 }

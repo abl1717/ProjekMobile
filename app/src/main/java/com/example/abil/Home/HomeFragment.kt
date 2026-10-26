@@ -35,21 +35,7 @@ class HomeFragment : Fragment() {
 
         binding.txtUsername.text = user
 
-        binding.btnLogout.setOnClickListener {
-            AlertDialog.Builder(requireContext())
-                .setTitle("Logout")
-                .setMessage("Apakah Anda yakin ingin keluar?")
-                .setPositiveButton("Ya") { dialog, _ ->
-                    val editor = sharedPref.edit()
-                    editor.clear()
-                    editor.apply()
-                    dialog.dismiss()
-                    startActivity(Intent(requireContext(), LoginActivity::class.java))
-                    requireActivity().finish()
-                }
-                .setNegativeButton("Batal") { dialog, _ -> dialog.dismiss() }
-                .show()
-        }
+
 
         binding.btnWebView.setOnClickListener {
             startActivity(Intent(requireContext(), WebViewActivity::class.java))
