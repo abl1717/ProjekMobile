@@ -25,8 +25,21 @@ class InformasiFragment : Fragment() {
     )
 
     private val dataListWithDesc = listOf(
-        mapOf("title" to "Undangan Rapat", "desc" to "Diberitahukan kepada seluruh masyarakat"),
-        mapOf("title" to "Gotong Royong", "desc" to "Gotong royong 19 Oktober 2026")
+        mapOf(
+            "title" to "Undangan Rapat",
+            "desc" to "Diberitahukan kepada seluruh masyarakat",
+            "date" to "2020-10-15"
+        ),
+        mapOf(
+            "title" to "Gotong Royong",
+            "desc" to "Gotong royong 19 Oktober 2026",
+            "date" to "2021-10-19"
+        ),
+        mapOf(
+            "title" to "Pembagian BLT Desa",
+            "desc" to "Pelaksanaan di Balai Desa pukul 09.00 WIB",
+            "date" to "2022-10-25"
+        )
     )
 
     override fun onCreateView(
@@ -58,19 +71,22 @@ class InformasiFragment : Fragment() {
 //                Toast.LENGTH_SHORT
 //            ).show()
 //        }
+        val displayList = ArrayList<Map<String, String>>()
+        displayList.addAll(dataListWithDesc.sortedByDescending { it["date"] })
 
         val adapter = SimpleAdapter(
             requireContext(),
-            dataListWithDesc,
+            displayList,
             android.R.layout.simple_list_item_2,
             arrayOf("title", "desc"), // key yang diambil dari data
             intArrayOf(android.R.id.text1, android.R.id.text2) // tempat tampilnya
         )
         binding.listViewItems.adapter = adapter
         binding.listViewItems.setOnItemClickListener { _, _, position, _ ->
-            val selectedItem = dataListWithDesc[position]
+            val selectedItem = displayList[position]
             val title = selectedItem["title"]
             val desc = selectedItem["desc"]
+            val date = selectedItem["date"]
             Toast.makeText(
                 requireContext(), "Kamu memilih: $title ($desc)",
                 Toast.LENGTH_SHORT
@@ -81,8 +97,22 @@ class InformasiFragment : Fragment() {
             val selectedChipId = checkedIds.firstOrNull() // ambil id chip yang dipilih
             if (selectedChipId != null) {
                 val chip = group.findViewById<Chip>(selectedChipId)
+                val filterText = chip.text.toString()
                 Toast.makeText(requireContext(), "Filter: ${chip.text}", Toast.LENGTH_SHORT).show()
-// Lakukan logika filter di sini
+                val filteredData = when (selectedChipId) {
+                    R.id.chipTerbaru -> {
+                        dataListWithDesc.sortedByDescending { it["date"] }
+                    }
+
+                    R.id.chipTerlama -> {
+                        dataListWithDesc.sortedBy { it["date"] }
+                    }
+
+                    else -> dataListWithDesc
+                }
+                displayList.clear()
+                displayList.addAll(filteredData)
+                adapter.notifyDataSetChanged()
             }
         }
     }

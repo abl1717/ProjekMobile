@@ -29,29 +29,32 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:selectionRequired="true"
         app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipSemua"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:text="Semua" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipTerbaru"
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="true"
+            android:checkable="true"
             android:text="Terbaru" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/chipPenting"
+            android:id="@+id/chipTerlama"
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Vote Tertinggi" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chipBelumDibaca"
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Vote Terendah" />
+            android:checkable="true"
+            android:text="Terlama" />
     </com.google.android.material.chip.ChipGroup>
 
     <ListView
