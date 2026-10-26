@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import com.example.abil.DetailActivity
+import com.example.abil.Informasi.InformasiFragment
 import com.example.abil.Laporan.LaporanFragment
 import com.example.abil.LoginActivity
 import com.example.abil.R
@@ -56,6 +57,10 @@ class HomeFragment : Fragment() {
 
         binding.btnLaporRound.setOnClickListener {
             startActivity(Intent(requireContext(), LaporanFragment::class.java))
+        }
+
+        binding.btnInfoRound.setOnClickListener {
+            startActivity(Intent(requireContext(), InformasiFragment::class.java))
         }
     }
 }

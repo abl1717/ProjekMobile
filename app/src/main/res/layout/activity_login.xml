@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="35dp"
         android:layout_marginTop="132dp"
-        android:hint="Email"
+        android:hint="NIK"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView">
@@ -49,6 +49,7 @@
         android:layout_marginHorizontal="35dp"
         android:layout_marginTop="32dp"
         android:hint="Kata Sandi"
+        app:endIconMode="password_toggle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout1">
@@ -67,6 +68,9 @@
         android:layout_marginHorizontal="35dp"
         android:layout_marginTop="32dp"
         android:text="Masuk"
+        app:icon="@drawable/ic_login"
+        app:iconGravity="textStart"
+        android:backgroundTint="@color/heritageGreen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
