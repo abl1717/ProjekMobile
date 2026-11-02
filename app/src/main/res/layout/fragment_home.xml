@@ -129,7 +129,7 @@
             app:layout_column="0"
             app:layout_columnWeight="1"
             app:layout_row="0"
-            app:srcCompat="@mipmap/ic_lapor2_round" />
+            app:srcCompat="@mipmap/ic_lapor3_round" />
 
         <!-- Tombol Vote -->
         <ImageButton
@@ -144,7 +144,7 @@
             app:layout_column="1"
             app:layout_columnWeight="1"
             app:layout_row="0"
-            app:srcCompat="@mipmap/ic_vote" />
+            app:srcCompat="@mipmap/ic_vote3" />
 
         <!-- Tombol Informasi -->
         <ImageButton
@@ -159,7 +159,7 @@
             app:layout_column="2"
             app:layout_columnWeight="1"
             app:layout_row="0"
-            app:srcCompat="@mipmap/ic_megaphone2_round" />
+            app:srcCompat="@mipmap/ic_mega3_round" />
 
         <!-- Label Laporan -->
         <TextView

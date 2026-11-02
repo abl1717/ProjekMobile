@@ -38,13 +38,15 @@ class LoginActivity : AppCompatActivity() {
             val user = binding.edtUser.text.toString()
             val pass = binding.edtPassword.text.toString()
 
-            if (user.isNotEmpty() && user == "abl" && pass == "abl123") {
+            if (user.isNotEmpty() && user == "abl" && pass == "abl12abl123") {
                 val editor = sharedPref.edit()
                 editor.putBoolean("isLogin", true)
                 editor.putString("username", user)
                 editor.apply()
 
-                startActivity(Intent(this, BaseActivity::class.java))
+                val intent = Intent(this, BaseActivity::class.java)
+                intent.putExtra("username", user)
+                startActivity(intent)
                 finish()
             } else {
                 AlertDialog.Builder(this)

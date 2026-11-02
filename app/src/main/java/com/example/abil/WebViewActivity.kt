@@ -24,7 +24,7 @@ class WebViewActivity : AppCompatActivity() {
 
         binding.webView.webViewClient = WebViewClient()
         binding.webView.settings.javaScriptEnabled = true
-        binding.webView.loadUrl("https://kompas.com")
+        binding.webView.loadUrl("https://news.detik.com/")
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {

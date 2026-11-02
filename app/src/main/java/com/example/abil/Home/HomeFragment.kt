@@ -32,21 +32,32 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val sharedPref = requireContext().getSharedPreferences("user_pref", MODE_PRIVATE)
         val user = requireActivity().intent.getStringExtra("username")
+            ?: sharedPref.getString("username", "Warga")
 
-        binding.txtUsername.text = user
-
-
+        binding.txtUsername.text = "Halo, $user!"
 
         binding.btnWebView.setOnClickListener {
             startActivity(Intent(requireContext(), WebViewActivity::class.java))
         }
 
         binding.btnLaporRound.setOnClickListener {
-            startActivity(Intent(requireContext(), LaporanFragment::class.java))
+            parentFragmentManager.beginTransaction()
+                .replace(
+                    R.id.fragment_container,
+                    LaporanFragment()
+                ) // Sesuaikan R.id.fragment_container dengan ID FrameLayout/FragmentContainerView di BaseActivity
+                .addToBackStack(null)
+                .commit()
         }
 
         binding.btnInfoRound.setOnClickListener {
-            startActivity(Intent(requireContext(), InformasiFragment::class.java))
+            parentFragmentManager.beginTransaction()
+                .replace(
+                    R.id.fragment_container,
+                    InformasiFragment()
+                ) // Sesuaikan dengan ID container di BaseActivity
+                .addToBackStack(null)
+                .commit()
         }
     }
 }
