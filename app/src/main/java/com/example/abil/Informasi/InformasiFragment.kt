@@ -23,7 +23,7 @@ class InformasiFragment : Fragment() {
             "Pelaksanaan di Balai Desa pukul 09.00 WIB",
             "2022-10-25"
         ),
-        InformasiModel("Posyandu Balita", "Diadakan di Balai RW 03", "2022-10-20")
+        InformasiModel("Posyandu Balita", "Diadakan di Balai RW 03", "2024-10-20")
     )
 
     override fun onCreateView(
