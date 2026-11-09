@@ -89,9 +89,4 @@ class FormLaporanFragment : Fragment() {
             viewPager.currentItem = 0
         }
     }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 }
