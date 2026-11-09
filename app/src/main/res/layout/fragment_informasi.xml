@@ -1,69 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F8F9FA"
     tools:context=".Informasi.InformasiFragment">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/heritageGreen"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_scrollFlags="scroll|enterAlways"
-        app:subtitleTextColor="@color/slateDark"
-        app:titleTextColor="@android:color/white" />
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F8F9FA"
+            app:layout_constraintTop_toTopOf="parent"
+            app:titleTextColor="#2B2D42" />
 
+        <!-- Area Foto Highlight -->
+        <ImageView
+            android:id="@+id/imgHighlight"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:background="#E0E0E0"
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
-    <com.google.android.material.chip.ChipGroup
-        android:id="@+id/chipGroupFilter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:selectionRequired="true"
-        app:singleSelection="true">
+        <!-- Kartu Hijau Highlight -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardHighlight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="-40dp"
+            app:cardBackgroundColor="#1E5631"
+            app:cardCornerRadius="12dp"
+            app:layout_constraintTop_toBottomOf="@id/imgHighlight">
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chipSemua"
-            style="@style/Widget.MaterialComponents.Chip.Filter"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/txtJudulHighlight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Judul Informasi Utama"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtTanggalHighlight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="02 Oktober 2026"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Judul Info Terkini -->
+        <TextView
+            android:id="@+id/txtHeaderTerkini"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checkable="true"
-            android:text="Semua" />
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:text="Info Terkini"
+            android:textColor="#2B2D42"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardHighlight" />
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chipTerbaru"
-            style="@style/Widget.MaterialComponents.Chip.Filter"
+        <TextView
+            android:id="@+id/txtLihatSemua"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checkable="true"
-            android:text="Terbaru" />
+            android:layout_marginEnd="16dp"
+            android:text="Semua >"
+            android:textColor="#555555"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/txtHeaderTerkini"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/txtHeaderTerkini" />
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chipTerlama"
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
+        <!-- RecyclerView Horizontal -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvInfoTerkini"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:checkable="true"
-            android:text="Terlama" />
-    </com.google.android.material.chip.ChipGroup>
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="32dp"
+            android:clipToPadding="false"
+            android:paddingHorizontal="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtHeaderTerkini" />
 
-    <ListView
-        android:id="@+id/listViewItems"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        app:layout_constraintStart_toStartOf="@+id/toolbar"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
