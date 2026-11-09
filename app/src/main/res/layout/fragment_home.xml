@@ -4,248 +4,207 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/softLight"
+    android:background="#F8F9FA"
     tools:context=".Home.HomeFragment">
 
+    <!-- Latar Belakang Gelombang -->
     <View
         android:id="@+id/background_header"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
         android:background="@drawable/bg_header_wave"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Sapaan Pengguna -->
     <TextView
         android:id="@+id/txtUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:fontFamily="@font/plusjakartasans_bold"
+        android:layout_marginTop="50dp"
+        android:fontFamily="sans-serif-medium"
         android:text="Halo, Abil!"
-        android:textColor="@color/slateDark"
-        android:textSize="25sp"
+        android:textColor="#2B2D42"
+        android:textSize="22sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Kartu Hijau Utama -->
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardView3"
-        android:layout_width="380dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="12dp"
-        android:backgroundTint="@color/heritageGreen"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtUsername">
+        android:id="@+id/cardDashboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        app:cardBackgroundColor="#1E5631"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:layout_constraintTop_toBottomOf="@id/txtUsername">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="5dp">
+            android:layout_height="wrap_content"
+            android:padding="20dp">
 
-
-            <Button
-                android:id="@+id/btnLaporBeranda"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:backgroundTint="@color/warmAmber"
-                android:fontFamily="@font/plusjakartasans_bold"
-                android:text="Buat Laporan Baru"
-                android:textColor="@color/slateDark"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginEnd="32dp"
-                app:layout_constraintBottom_toTopOf="@+id/btnLaporBeranda"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.421"
-                tools:srcCompat="@drawable/suaradesalogo" />
-
+            <!-- Jam Real-time -->
             <TextView
-                android:id="@+id/textJam"
+                android:id="@+id/txtJam"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:fontFamily="@font/plusjakartasans_bold"
                 android:text="09:00"
-                android:textColor="@color/white"
-                android:textSize="30sp"
-                app:layout_constraintEnd_toStartOf="@+id/imageView2"
-                app:layout_constraintHorizontal_bias="0.183"
+                android:textColor="@android:color/white"
+                android:textSize="28sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <!-- Tanggal Real-time -->
             <TextView
-                android:id="@+id/textTgl"
+                android:id="@+id/txtTgl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/plusjakartasans_regular"
-                android:text="Senin, 12 Okt 2026"
-                android:textColor="@color/white"
-                app:layout_constraintBottom_toTopOf="@+id/btnLaporBeranda"
-                app:layout_constraintEnd_toStartOf="@+id/imageView2"
-                app:layout_constraintHorizontal_bias="0.214"
+                android:layout_marginTop="4dp"
+                android:text="Senin, 02 Okt 2026"
+                android:textColor="#E0E0E0"
+                android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textJam"
-                app:layout_constraintVertical_bias="0.0" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                app:layout_constraintTop_toBottomOf="@id/txtJam" />
 
+            <!-- Foto Profil (Glide) -->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imgProfile"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+
+            <!-- Tombol Buat Laporan -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLaporBeranda"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#F4A261"
+                android:text="Buat Laporan Baru"
+                android:textColor="#2B2D42"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:cornerRadius="12dp"
+                app:layout_constraintTop_toBottomOf="@id/txtTgl" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
-
+    <!-- Grid Menu Navigasi Cepat -->
     <androidx.gridlayout.widget.GridLayout
         android:id="@+id/gridMenu"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        app:alignmentMode="alignMargins"
+        android:layout_marginTop="24dp"
+        android:paddingHorizontal="20dp"
         app:columnCount="3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView3"
-        app:rowCount="2"
-        app:useDefaultMargins="false">
+        app:layout_constraintTop_toBottomOf="@id/cardDashboard"
+        app:rowCount="2">
 
-        <!-- Tombol Laporan -->
+        <!-- Laporan -->
         <ImageButton
             android:id="@+id/btnLaporRound"
             android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_marginBottom="8dp"
-            android:alpha="0.8"
-            android:background="@android:color/transparent"
-            android:contentDescription="Laporan"
+            android:layout_height="60dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:scaleType="fitCenter"
             app:layout_column="0"
             app:layout_columnWeight="1"
             app:layout_row="0"
             app:srcCompat="@mipmap/ic_lapor3_round" />
 
-        <!-- Tombol Vote -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="Laporan"
+            android:textColor="#555555"
+            android:textSize="12sp"
+            app:layout_column="0"
+            app:layout_columnWeight="1"
+            app:layout_row="1" />
+
+        <!-- Vote -->
         <ImageButton
             android:id="@+id/btnVoteRound"
             android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_marginBottom="8dp"
-            android:alpha="0.8"
-            android:background="@android:color/transparent"
-            android:contentDescription="Vote"
+            android:layout_height="60dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:scaleType="fitCenter"
             app:layout_column="1"
             app:layout_columnWeight="1"
             app:layout_row="0"
             app:srcCompat="@mipmap/ic_vote3" />
 
-        <!-- Tombol Informasi -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="Vote"
+            android:textColor="#555555"
+            android:textSize="12sp"
+            app:layout_column="1"
+            app:layout_columnWeight="1"
+            app:layout_row="1" />
+
+        <!-- Informasi -->
         <ImageButton
             android:id="@+id/btnInfoRound"
             android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_marginBottom="8dp"
-            android:alpha="0.8"
-            android:background="@android:color/transparent"
-            android:contentDescription="Informasi"
+            android:layout_height="60dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:scaleType="fitCenter"
             app:layout_column="2"
             app:layout_columnWeight="1"
             app:layout_row="0"
             app:srcCompat="@mipmap/ic_mega3_round" />
 
-        <!-- Label Laporan -->
         <TextView
-            android:id="@+id/textView2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/plusjakartasans_regular"
-            android:gravity="center"
-            android:text="Laporan"
-            android:textColor="@color/slateDark"
-            app:layout_column="0"
-            app:layout_columnWeight="1"
-            app:layout_row="1" />
-
-        <!-- Label Vote -->
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/plusjakartasans_regular"
-            android:gravity="center"
-            android:text="Vote"
-            android:textColor="@color/slateDark"
-            app:layout_column="1"
-            app:layout_columnWeight="1"
-            app:layout_row="1" />
-
-        <!-- Label Informasi -->
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/plusjakartasans_regular"
+            android:layout_marginTop="8dp"
             android:gravity="center"
             android:text="Informasi"
-            android:textColor="@color/slateDark"
+            android:textColor="#555555"
+            android:textSize="12sp"
             app:layout_column="2"
             app:layout_columnWeight="1"
             app:layout_row="1" />
-
     </androidx.gridlayout.widget.GridLayout>
 
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardView5"
-        android:layout_width="match_parent"
-        android:layout_height="240dp"
-        android:backgroundTint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <!-- Bagian Pengumuman dengan RecyclerView -->
+    <TextView
+        android:id="@+id/txtHeaderPengumuman"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="32dp"
+        android:text="Pengumuman"
+        android:textColor="#2B2D42"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gridMenu"
-        app:layout_constraintVertical_bias="0.142">
+        app:layout_constraintTop_toBottomOf="@id/gridMenu" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="5dp">
-
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:fontFamily="@font/plusjakartasans_bold"
-                android:text="Informasi"
-                android:textColor="@color/slateDark"
-                android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.052"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-
-            <Button
-                android:id="@+id/btnWebView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:backgroundTint="@color/heritageGreen"
-                android:text="Web View"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.501"
-                app:layout_constraintStart_toStartOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </com.google.android.material.card.MaterialCardView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPengumumanHome"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:clipToPadding="false"
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtHeaderPengumuman" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

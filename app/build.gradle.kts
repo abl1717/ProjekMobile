@@ -35,6 +35,8 @@ android {
 }
 
 dependencies {
+    implementation("androidx.fragment:fragment-ktx:1.6.2")
+    implementation("androidx.recyclerview:recyclerview:1.3.2") // Tahap 3 dan 4: RecyclerView
     implementation("com.github.bumptech.glide:glide:4.16.0")
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.appcompat)
